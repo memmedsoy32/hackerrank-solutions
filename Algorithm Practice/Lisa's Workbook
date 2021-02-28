@@ -1,0 +1,31 @@
+def workbook(n, k, arr):
+    count=0
+    sss=[]
+    for i in arr:
+        temp=list(range(1,i+1))
+        for start in range(0,len(temp),k):
+            if(start+k>len(temp)):
+                sss.append(temp[start:])
+            else:
+                sss.append(temp[start:start+k])
+    for j,ls in enumerate(sss):
+        if j+1 in ls:
+            count+=1  
+    return count
+
+if __name__ == '__main__':
+    fptr = open(os.environ['OUTPUT_PATH'], 'w')
+
+    nk = input().split()
+
+    n = int(nk[0])
+
+    k = int(nk[1])
+
+    arr = list(map(int, input().rstrip().split()))
+
+    result = workbook(n, k, arr)
+
+    fptr.write(str(result) + '\n')
+
+    fptr.close()
