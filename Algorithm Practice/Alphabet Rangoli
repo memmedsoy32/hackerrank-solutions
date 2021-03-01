@@ -1,0 +1,13 @@
+def test(num):
+    alpha=list('abcdefghijklmnopqrstuvwxyz')
+    case=alpha[:num]
+    string_sum=4*num-1
+    fin=[]
+    for i in range(num-1,0,-1):
+        act=case[i:]
+        ls='-'+"-".join((act[::-1]+act[1:]))+'-'
+        fin.append('{:-^{}}'.format(ls,string_sum))
+    final=fin+fin[len(fin)-2::-1]
+    for i in final:
+        print(i)
+    
