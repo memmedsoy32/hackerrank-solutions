@@ -1,0 +1,8 @@
+def closestNumbers(arr):
+    arr.sort()
+    dif=min([arr[i+1]-arr[i] for i in range(len(arr)-1)])
+    final=[]
+    for i in range(len(arr)-1):
+        if((arr[i+1]-arr[i])==dif):
+            final=final+([arr[i],arr[i+1]])
+    return(final)
