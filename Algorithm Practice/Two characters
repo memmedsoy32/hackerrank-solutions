@@ -1,0 +1,13 @@
+def alternate(s):
+    if(len(set(s))==1):
+        return 0
+    test=list(combinations(set(s),len(set(s))-2))
+    mx=0
+    for i in test:
+        temp=s
+        for j in i:
+            temp=temp.replace(j,'')
+        if 2*list(set(temp))[0] not in temp and 2*list(set(temp))[1] not in temp:
+            if(len(temp)>mx):
+                mx=len(temp)
+    return mx
